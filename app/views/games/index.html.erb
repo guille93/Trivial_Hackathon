@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="trivial.css">
+
+        <title> Hackton Trivial</title>
+    </head>
+
+    <body>
+    <header>
+    	Hackton Trivial
+        <hr>
+        <header class="subheader1"> Choose one poster! </header>
+    </header>
+   
+        <div class="container containerfirst">
+            <div class="row rowfirst">
+                <div id="columnas" class="col-md-12 col-xs-12">
+                    <section>
+                        <% @finalmovies.each do |movie| %>
+                            <% if movie.title === @correctanswer.title %>
+                                <img class="imgstandar" src= <%= @correctanswer.poster %> id="winner">
+                                <% else %>
+                                <img  class="imgstandar" src=<%= movie.poster %>>
+                            <% end %>
+                        <% end %>
+                    </section>
+                    <h2 class="correct"></h2>
+                    <h2 class="incorrect"></h2>
+                    <div align="center">
+                        <a href="http://localhost:3000/"><button class="btn btn-success">Next Question!</button></a>
+                    </div>
+                </div>
+                </div>
+                <div class="row rowfirst">
+                <div id="columnas" class="col-md-12 col-xs-12">
+                    <header class="subheader2"> Which movie was made in <%= @correctanswer.year %>? </header>
+                    
+                </div>
+             </div>
+        </div>
+
+	  <script type="text/javascript" src=""></script>
+    </body>
+
+    <footer>
+
+    <hr>
+
+    Hackton Trivial ® Created by Berta Minguela, Juan Pablo Marín, Guillermo Cordero y Pablo Iriarte
+
+    </footer>
+
+</html>
